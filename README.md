@@ -3,7 +3,7 @@ Task Management System built on FastAPI with Alembic for db migrations
 
 ## Steps to run project on localhost
 
-Note:- database credentials like user, password and databaseName is defined in app/db.py you can change as per config of your system
+Note:- database credentials like user, password and databaseName is defined in api/credentials/credentials.json you can change as per config of your system
 
 > 1. Install dependecies from requirement.txt file
                     
@@ -20,6 +20,11 @@ Note:- database credentials like user, password and databaseName is defined in a
 > 4. Run main.py from app
                     
   `uvicorn app.main:app --reload`
+
+> 5. Run unit test cases
+                    
+  `pytest -v`
+
 
 
 ### navigate to  [localhost:8000](http://localhost:8000) once application is running

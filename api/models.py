@@ -8,7 +8,7 @@ class Base(DeclarativeBase):
     pass
 
 
-
+# task table
 class Tasks(Base):
     __tablename__ = "tasks"
 
