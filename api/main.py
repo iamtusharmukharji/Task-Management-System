@@ -43,8 +43,3 @@ async def db_health_check(db: AsyncSession = Depends(get_db)):
         response = {"status": "error", "message": f"database connection failed: {str(err)}"}
         return JSONResponse(content=response, status_code=400)
 
-
-# uvicorn app.main:app --reload
-
-# alembic revision --autogenerate -m "Initial migration"
-# alembic upgrade head

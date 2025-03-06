@@ -1,13 +1,7 @@
 
 
 import pytest
-import os
-import sys
 from httpx import AsyncClient
-
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 
 
 @pytest.fixture
@@ -53,6 +47,18 @@ async def test_get_tasks(async_client):
 
     assert "tasks" in data
     assert isinstance(data["tasks"], list)
+
+
+@pytest.mark.asyncio
+async def test_check_db_health(async_client):
+
+    """DB Health Test"""
+    response = await async_client.get("/health_check")
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert data["status"] == "ok"
 
 
 @pytest.mark.asyncio

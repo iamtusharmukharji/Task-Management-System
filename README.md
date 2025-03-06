@@ -5,7 +5,7 @@ Task Management System built on FastAPI with Alembic for db migrations
 
 Note:- database credentials like user, password and databaseName is defined in api/credentials/credentials.json you can change as per config of your system
 
-> 1. Install dependecies from requirement.txt file
+> 1. Install dependecies from requirements.txt file
                     
   `pip install -r requirements.txt`
 
