@@ -23,7 +23,7 @@ Note:- database credentials like user, password and databaseName is defined in a
 
 > 5. Run unit test cases
                     
-  `pytest -v`
+  `pytest --asyncio-mode=auto`
 
 
 

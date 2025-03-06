@@ -19,6 +19,7 @@ async def async_client():
 
 @pytest.mark.asyncio
 async def test_create_task(async_client):
+    """Valid task creation test"""
 
     response = await async_client.post("/task/new", json={
         "title": "Test Task",
@@ -32,6 +33,7 @@ async def test_create_task(async_client):
 @pytest.mark.asyncio
 async def test_create_task_invalid_status(async_client):
 
+    """Invalid task creation test"""
     response = await async_client.post("/task/new", json={
         "title": "Invalid Task",
         "description": "This task has an invalid status",
@@ -43,6 +45,7 @@ async def test_create_task_invalid_status(async_client):
 @pytest.mark.asyncio
 async def test_get_tasks(async_client):
 
+    """Fetch all tasks"""
     response = await async_client.get("/task/all?page=1&size=10")
     assert response.status_code == 200
 
